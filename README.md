@@ -1,6 +1,6 @@
 # Flower Image Classifier
 
-![Example Image](assets\inference_example.png)
+![Example Image](Example.png)
 *Image showing the predicted flower name and corresponding probabilities.*
 
 ## Overview
@@ -70,7 +70,7 @@ I trained the neural net on a 4090RTX and got good results.  As the checkpoint f
 
 ### Training the Model
 
-![Training Screenshot](assets\training.png)
+![Training Screenshot](Training.png)
 
 To train the model, run the `train.py` script with the following command:
 ```sh
