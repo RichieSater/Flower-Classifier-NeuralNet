@@ -1,0 +1,2 @@
+# Ignore the model checkpoint file
+flower_classifier_checkpoint.pth
