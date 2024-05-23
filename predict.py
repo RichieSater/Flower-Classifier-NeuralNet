@@ -30,6 +30,8 @@ def main():
     if args.category_names:
         with open(args.category_names, 'r') as f:
             cat_to_name = json.load(f)
+        print("Category to name mapping loaded successfully.")
+        print(cat_to_name)
         class_names = [cat_to_name[str(cls)] for cls in classes]
     else:
         class_names = classes
