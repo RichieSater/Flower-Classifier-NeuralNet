@@ -1,5 +1,3 @@
-# train.py
-
 import argparse
 import torch
 from torch import nn, optim
@@ -18,16 +16,31 @@ def main():
 
     args = parser.parse_args()
     
+    print("Loading data...")
     dataloaders, class_to_idx = load_data(args.data_directory)
+    print("Data loaded successfully.")
+    
+    print(f"Building model with architecture {args.arch}...")
     model = build_model(arch=args.arch, hidden_units=args.hidden_units)
+    print(f"Model built successfully with {args.hidden_units} hidden units.")
+    
     criterion = nn.NLLLoss()
     optimizer = optim.Adam(model.classifier.parameters(), lr=args.learning_rate)
 
     device = torch.device("cuda" if args.gpu and torch.cuda.is_available() else "cpu")
+    print(f"Training on device: {device}")
+    if device.type == 'cuda':
+        print(torch.cuda.get_device_name(torch.cuda.current_device()))
+        
     model.to(device)
 
+    print(f"Starting training for {args.epochs} epochs...")
     train_model(model, dataloaders, criterion, optimizer, args.epochs, device)
+    print("Training completed.")
+
+    print(f"Saving checkpoint to {args.save_dir}...")
     save_checkpoint(model, optimizer, args.epochs, class_to_idx, args.save_dir)
+    print("Checkpoint saved successfully.")
 
 if __name__ == '__main__':
     main()
