@@ -69,7 +69,7 @@ I trained the neural net on a 4090RTX and got good results.  As the checkpoint f
 
 ### Training the Model
 
-![Training Screenshot](Training.png)
+![Training Screenshot](training.png)
 
 To train the model, run the `train.py` script with the following command:
 ```sh
