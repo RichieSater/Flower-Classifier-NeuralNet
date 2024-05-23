@@ -66,8 +66,6 @@ I trained the neural net on a 4090RTX and got good results.  As the checkpoint f
 
 # Usage
 
-# Usage
-
 
 ### Training the Model
 
