@@ -1,6 +1,7 @@
 # Flower Image Classifier
 
 ![Example Image](Example.png)
+
 *Image showing the predicted flower name and corresponding probabilities.*
 
 ## Overview
